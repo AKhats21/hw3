@@ -67,6 +67,14 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
+struct OddSorter
+{
+    bool operator()(const int val)
+    {
+        return (val % 2);
+    }
+};
+
 
 
 
@@ -86,6 +94,14 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    Node *smaller = NULL; 
+    Node *larger = NULL;
+    llpivot(head, smaller, larger, 7);
+    print(smaller);
+    print(larger);
+
+    // Node* newhead = llfilter(head, OddSorter());
+    // print(newhead);
 
 
 
